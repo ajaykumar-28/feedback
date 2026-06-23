@@ -16,7 +16,13 @@
         <label for="username">Your Name:</label>
         <input type="text" id="username" name="username"><br><br>  {% endcomment %}
 
-        {{ form }}
+        {% comment %} {{ form }} {% endcomment %}
+
+        <div class="form-control {% if form.user_name.errors %} errors {% endif %}">
+            {{ form.user_name.label_tag }}
+            {{ form.user_name }}
+            {{ form.user_name.errors }}
+        </div>
         <button>Send</button>
     </form>
 </body>
